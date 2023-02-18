@@ -5,13 +5,12 @@ import { NavLink } from "react-router-dom";
 import logo from "./logo.svg";
 import styled from "styled-components";
 
-const NavWrap = styled.div`
-  .active {
+const CustomNavLink = styled(NavLink)`
+  &.active {
     color: white !important;
   }
-  a {
-    padding: 4px;
-  }
+
+  padding: 4px;
 `;
 function NavBar() {
   return (
@@ -24,27 +23,25 @@ function NavBar() {
           </Navbar.Brand>
 
           <Nav className="me-auto">
-            <NavWrap>
-              <NavLink
-                to="main"
-                className={({ isActive }) => (isActive ? "active" : undefined)}
-              >
-                {" "}
-                Main
-              </NavLink>
-              <NavLink
-                to="example/1"
-                className={({ isActive }) => (isActive ? "active" : undefined)}
-              >
-                Example 1
-              </NavLink>
-              <NavLink
-                to="example/2"
-                className={({ isActive }) => (isActive ? "active" : undefined)}
-              >
-                Example 2
-              </NavLink>
-            </NavWrap>
+            <CustomNavLink
+              to="main"
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+            >
+              {" "}
+              Main
+            </CustomNavLink>
+            <CustomNavLink
+              to="example/1"
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+            >
+              Example 1
+            </CustomNavLink>
+            <CustomNavLink
+              to="example/2"
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+            >
+              Example 2
+            </CustomNavLink>
           </Nav>
         </Container>
       </Navbar>
