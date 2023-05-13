@@ -35,9 +35,10 @@ function Main() {
           We use inline styles or{" "}
           <a href="https://styled-components.com/">styled-components</a>. We
           don't use any CSS classes exept classes of states, like "active",
-          "disabled", "focused". All styles should be located inside component
-          folder, or inside component itself. Styles colocation principle. We
-          can use classes for components that were imported from some library.
+          "disabled", "focused". We also don't use element Selector, selection
+          by tag. All styles should be located inside component folder, or
+          inside component itself. Styles colocation principle. We can use
+          classes for components that were imported from some library.
         </ListGroup.Item>
         <ListGroup.Item as="li">
           We write tests with{" "}
