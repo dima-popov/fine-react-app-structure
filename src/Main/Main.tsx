@@ -14,9 +14,9 @@ function Main() {
         </ListGroup.Item>
         <ListGroup.Item as="li">
           useSelect only in complex components. For simple components we use
-          Redux connect(), so components get only props. Redux connect() gives
-          us opportunity to write unit tests for components that use Redux
-          store. Redux connect() also helps to make components pure.
+          Redux connect() and React memo(), so components get only props. Redux
+          connect() gives us opportunity to write unit tests for components that
+          use Redux store. Redux connect() also helps to make components pure.
         </ListGroup.Item>
         <ListGroup.Item as="li">
           Complex components (components that contain other components) we use
@@ -24,8 +24,12 @@ function Main() {
         </ListGroup.Item>
         <ListGroup.Item as="li">We use TypeScript.</ListGroup.Item>
         <ListGroup.Item as="li">
-          No data fetching in components (only in services (through store with
-          redux-thunk)). Components get only props.
+          Reduce data fetching in components. Use fetch in services (through
+          store with redux-thunk and createAsyncThunk). But don't make your
+          store too complicated. <br />
+          If you need to make a particular fetch in some component, think maybe
+          it will be better to put it inside the component rather than in the
+          store.
         </ListGroup.Item>
         <ListGroup.Item as="li">
           We use inline styles or{" "}
